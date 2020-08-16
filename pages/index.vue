@@ -4,34 +4,98 @@
 
     <div class="photos-container">
       <figure class="photo" v-for="photo in photos">
-        <i style="padding-bottom:150%"></i>
-        <img :src="photo"/>
+        <img v-img:v="photo" src="https://via.placeholder.com/350" />
       </figure>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
+import * as photo1 from "~/assets/photos/7SA05051_2.jpg";
+import * as photo2 from "~/assets/photos/A7S03354_2.jpg";
+import * as photo3 from "~/assets/photos/A7304557_2.jpg";
+import * as photo4 from "~/assets/photos/A7307431-Blend2.jpg";
+import * as photo5 from "~/assets/photos/flame_raw.jpg";
+import * as photo6 from "~/assets/photos/M31_2.jpg";
+import * as photo7 from "~/assets/photos/M42_3.jpg";
+import * as photo8 from "~/assets/photos/M45_2.jpg";
+import * as photo9 from "~/assets/photos/M81_2.jpg";
+import * as photo10 from "~/assets/photos/M101_2.jpg";
+import * as photo11 from "~/assets/photos/NGC2024_2.jpg";
+import * as photo12 from "~/assets/photos/original-2-Edit.jpg";
 
 // https://minetta-demo-de.squarespace.com/?nochrome=true do like this
-export default Vue.extend({
+
+export default {
   data() {
     return {
       photos: [
-        'https://www.esa.int/var/esa/storage/images/19716864-11-eng-GB/ESA_root_pillars.jpg',
-        'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/andromeda-galaxy-royalty-free-image-1585682435.jpg',
-        'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F765877054%2F960x0.jpg%3Ffit%3Dscale',
-        'https://scitechdaily.com/images/Illustration-Photons-Galaxy.jpg',
-        'https://specials-images.forbesimg.com/imageserve/1176555906/960x0.jpg?fit=scale',
-        'https://orsted.com/-/media/WWW/Images/Corp/Campaign/SpaceSafari/space-safari-background.png',
-        'https://spacenews.com/wp-content/uploads/2018/05/24359364107_152b0152ff_k.jpg',
-        'https://scx2.b-cdn.net/gfx/news/hires/2019/4-space.jpg',
-      ],
-    };
-  },
+        {
+          src: photo1,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo2,
+          title: "Title2",
+          group: "all"
+        },
+        {
+          src: photo3,
+          title: "Title3",
+          group: "all"
+        },
+        {
+          src: photo4,
+          title: "Title4",
+          group: "all"
+        },
+        {
+          src: photo5,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo6,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo7,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo8,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo9,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo10,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo11,
+          title: "Title1",
+          group: "all"
+        },
+        {
+          src: photo12,
+          title: "Title1",
+          group: "all"
+        }
 
-});
+      ]
+    };
+  }
+
+};
 </script>
 
 <style lang="scss">
@@ -52,27 +116,27 @@ export default Vue.extend({
   padding: var(--spacing-md);
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
-
-  &::after {
-    content: '';
-    flex-grow: 999999999;
-  }
 
   .photo {
-    margin: 2px;
-    background-color: violet;
+    margin: var(--spacing-xs);
     position: relative;
+    max-height: 300px;
 
-    i {
-      display: block;
-    }
+    max-width: 30%;
+    width: 100%;
 
     img {
-      position: absolute;
-      top: 0;
       width: 100%;
-      vertical-align: bottom;
+      height: 300px;
+      object-fit: cover;
+      transform: scale(1);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 

@@ -35,9 +35,19 @@ export default Vue.extend({});
   }
 
   &__links {
-    &-entry:not(:last-child){
-      margin-right: var(--spacing-sm);
+
+    &-entry {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:not(:last-child) {
+        margin-right: var(--spacing-sm);
+      }
     }
+
   }
 }
 
