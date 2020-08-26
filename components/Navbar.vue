@@ -21,8 +21,7 @@ export default Vue.extend({});
 
 <style lang="scss">
 .navbar {
-  position: absolute;
-  top: 0;
+
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -35,6 +34,10 @@ export default Vue.extend({});
   }
 
   &__links {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
 
     &-entry {
       cursor: pointer;
